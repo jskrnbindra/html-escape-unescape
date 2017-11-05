@@ -15,21 +15,21 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/angular/angular.git"
+    "url": "git@github.com:jskrnbindra/html-escape-unescape.git"
   },
   "dependencies": {
-    "@angular/common": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
-    "@angular/core": "^4.0.0",
-    "@angular/platform-browser": "^4.0.0",
-    "@angular/platform-browser-dynamic": "^4.0.0",
-    "core-js": "^2.4.1",
     "he": "^1.1.1"
   },
   "devDependencies": {
     "@angular/cli": "1.2.0",
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
     "@angular/compiler-cli": "^4.0.0",
     "@angular/language-service": "^4.0.0",
+    "@angular/router": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
     "ng-packagr": "^1.5.0",
     "typescript": "~2.3.3"
   }

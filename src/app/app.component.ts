@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
   title = '&lt;h1&gt;ap0&lt;/h1&gt;';
 
   ngOnInit() {
-    console.log('kiddan', );
     
   }
 }
