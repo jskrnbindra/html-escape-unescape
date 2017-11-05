@@ -1,11 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { Escape } from './pipes/escape.pipe';
+import { EscapePipe } from './pipes/escape.pipe';
 import { Unescape } from './pipes/unescape.pipe';
+import { Escape } from './escape';
 
 const pipes = [
-  Escape,
+  EscapePipe,
   Unescape
 ]
 
@@ -14,6 +15,7 @@ const pipes = [
     CommonModule
   ],
   declarations: [ ...pipes ],
-  exports: [...pipes]
+  exports: [...pipes],
+  providers: [Escape]
 })
-export class HTMLEscapeUnescapeModule { }
+export class HTMLEscapeUnescapeModule {}

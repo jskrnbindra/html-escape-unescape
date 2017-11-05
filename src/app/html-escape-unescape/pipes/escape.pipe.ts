@@ -1,24 +1,27 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as _h from 'he';
+import { Escape } from '../escape'
+
 
 @Pipe({
   name: 'escape'
 })
-export class Escape implements PipeTransform {
+export class EscapePipe implements PipeTransform {
+
+  constructor(private escape: Escape) {}
 
   /**
- * BLUE BLUE BLUE
- * @param {string} locale
+ * Pipe method to HTML escape. Use method it(string, object) instead.
+ * @param {string} value
+ * @param {object} Options 
  * @return {string} HTML escaped value
  */
-  it(value: string): string {
-    
-    return this.transform(value);
-  }
+  transform(value: any, arg?: number | boolean): string {
+ 
+    if (value === null || value === undefined) {
+      throw `The input value to the pipe must be a string or a string convertible value like number, booleans, etc.`;
+    }
 
-  transform(value: any, args?: any): any {
-
-    return _h.escape(value);
+    return this.escape.it(value.toString(), arg);
   }
 
 }
