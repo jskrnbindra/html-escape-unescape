@@ -1,0 +1,36 @@
+{
+  "name": "html-escape-unescape",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "A light, fast and exhaustive library for all your HTML encoding decoding needs.",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "echo \"Error: no test... minimal project\" && exit 1",
+    "lint": "echo \"Error: no lint... minimal project\" && exit 1",
+    "e2e": "echo \"Error: no e2e... minimal project\" && exit 1",
+    "package": "ng-packagr -p ng-packagr.json"
+  },
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/angular/angular.git"
+  },
+  "dependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "core-js": "^2.4.1",
+    "he": "^1.1.1"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.2.0",
+    "@angular/compiler-cli": "^4.0.0",
+    "@angular/language-service": "^4.0.0",
+    "ng-packagr": "^1.5.0",
+    "typescript": "~2.3.3"
+  }
+}
