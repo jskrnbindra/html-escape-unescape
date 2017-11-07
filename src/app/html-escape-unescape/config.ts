@@ -41,3 +41,6 @@ export const HTMLSafe = {
     '[': ['&#91;', '&#x5B'], 
     ']': ['&#93;', '&#x5D'],
 };
+
+export const BAD_REQUEST_ERR_MSG = `Invalid parameter supplied to the pipe. Refer to the docs at https://www.npmjs.com/package/html-escape-unescape to see the correct usage.`;
+export const DEEP_ARG = 'recursive';

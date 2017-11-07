@@ -1,7 +1,10 @@
 import * as _h from 'he';
+import { BAD_REQUEST_ERR_MSG, DEEP_ARG } from './config';
 
 export class Unescape {
 
+    optionsObject: any = null;
+    
     constructor() {
     }
 
@@ -11,9 +14,12 @@ export class Unescape {
     * @param {boolean | number} arg 
     * @return {string} 
     */
-    it(value: any, arg?: boolean | number) {
+    it(value: any, arg?: string | number, options?: any) {
         if (value === null || value === undefined) {
-            throw `The input value to the pipe must be a string or a string convertible value like number, booleans, etc.`;
+            throw BAD_REQUEST_ERR_MSG;
+        }
+        if (options !== undefined && typeof options !== 'object') {
+            throw BAD_REQUEST_ERR_MSG;
         }
         value = value.toString();
 
@@ -23,11 +29,20 @@ export class Unescape {
         if (typeof arg == 'number') {
             return this.uptoLevel(value, arg);
         }
-        if (typeof arg == 'boolean') {
-           return arg === true ? this.inDeepMode(value) : this.unescapeString(value);
+        if (typeof arg == 'string') {
+            if (arg !== DEEP_ARG) {
+                throw BAD_REQUEST_ERR_MSG;
+            }
+            
+            return this.inDeepMode(value);
+        }
+        if (typeof options ==  'object' || (typeof arg == 'object' && typeof options === 'undefined')) {
+            this.optionsObject = options || arg;
+
+            return this.unescapeString(value);
         }
 
-        throw 'Invalid parameter supplied to the pipe.';
+        throw BAD_REQUEST_ERR_MSG;
     }
 
     /**
@@ -37,7 +52,7 @@ export class Unescape {
     */
     unescapeString(rawInput: string): string {
     
-        return _h.unescape(rawInput);
+        return this.optionsObject !== undefined && this.optionsObject !== null ? _h.unescape(rawInput, this.optionsObject) : _h.unescape(rawInput);
     }
 
     /**

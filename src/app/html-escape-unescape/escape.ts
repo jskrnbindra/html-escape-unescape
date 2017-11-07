@@ -1,4 +1,5 @@
 import * as _h from 'he';
+import { BAD_REQUEST_ERR_MSG, DEEP_ARG } from './config';
 
 export class Escape {
 
@@ -8,28 +9,32 @@ export class Escape {
     /**
     * Escapes HTML entities from a string.
     * @param {string} value 
-    * @param {boolean | number} arg 
+    * @param {string | number} arg 
+    * @param {any} options
     * @return {string} 
     */
-    it(value: any, arg?: boolean | number) {
+    it(value: any, arg?: string | number) {
         if (value === null || value === undefined) {
-            throw `The input value to the pipe must be a string or a string convertible value like number, booleans, etc.`;
+            throw BAD_REQUEST_ERR_MSG;
         }
         value = value.toString();
 
         if (arg === undefined || arg === null) {
-           return this.escapeString(value);
+            return this.escapeString(value);
         }
         if (typeof arg == 'number') {
             return this.uptoLevel(value, arg);
         }
-        if (typeof arg == 'boolean') {
-        //   return arg === true ? this.inDeepMode(value) : this.escapeString(value);
-        throw 'No :deep on Escape.';
-        
+        if (typeof arg == 'string') {
+            if (arg === DEEP_ARG){
+                throw 'No :deep on Escape.';
+            }
+        }
+        if (typeof arg ==  'object') {
+            throw 'No options for Escape. Refer to the docs at https://www.npmjs.com/package/html-escape-unescape to see the correct usage.';
         }
 
-        throw 'Invalid parameter supplied to the pipe.';
+        throw BAD_REQUEST_ERR_MSG;
     }
 
     /**
@@ -38,7 +43,7 @@ export class Escape {
     * @return {string} 
     */
     escapeString(rawInput: string): string {
-    
+
         return _h.escape(rawInput);
     }
 
@@ -48,9 +53,9 @@ export class Escape {
     * @param {boolean | number} levels 
     * @return {string} 
     */
-    uptoLevel(rawInput: string, levels: number ): string {
+    uptoLevel(rawInput: string, levels: number): string {
         let escapedString = rawInput;
-        while(levels--) {
+        while (levels--) {
             escapedString = this.escapeString(escapedString);
         }
 
