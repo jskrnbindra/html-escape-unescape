@@ -4,14 +4,14 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-root',
   template: `
     <h1>
-      Welcome to {{ title1 | escape  }}!!
+      Welcome to {{ title1 | unescape  }} !!
     </h1>
   `,
   styles: []
 })
 export class AppComponent implements OnInit {
   title = '&lt;h1&gt;ap0&lt;/h1&gt;';
-  title1 = '<h1>yo</h1>';
+  title1 = `&#x21&#x28&#x2B`;
 
   ngOnInit() {
     
