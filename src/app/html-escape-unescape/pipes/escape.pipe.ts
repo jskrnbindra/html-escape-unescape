@@ -1,7 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { Escape } from '../escape'
 
-
 @Pipe({
   name: 'escape'
 })

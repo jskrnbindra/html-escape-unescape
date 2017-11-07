@@ -1,13 +1,25 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import * as _h from 'he';
+import { Unescape } from '../unescape';
 
 @Pipe({
   name: 'unescape'
 })
-export class Unescape implements PipeTransform {
+export class UnescapePipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
+  constructor(private unescape: Unescape) {}
+  
+  /**
+ * Pipe method to HTML unescape. Use method it(string, object) instead.
+ * @param {string} value
+ * @param {object} Options 
+ * @return {string} 
+ */
+  transform(value: any, arg?: number | boolean): string {
+    if (value === null || value === undefined) {
+      throw `The input value to the pipe must be a string or a string convertible value like number, booleans, etc.`;
+    }
 
-    return _h.unescape(value);
+    return this.unescape.it(value.toString(), arg);
   }
+
 }
