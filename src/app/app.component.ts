@@ -1,19 +1,28 @@
 import { Component, OnInit } from '@angular/core';
+import { Escape, Unescape  } from './html-escape-unescape';
 
 @Component({
   selector: 'app-root',
   template: `
     <h1>
-      Welcome to {{ title1 | unescape  }} !!
+      Welcome to {{ title | unescape }} !!
     </h1>
   `,
-  styles: []
+  styles: [],
+  providers: [Escape, Unescape]
 })
 export class AppComponent implements OnInit {
-  title = '&lt;h1&gt;ap0&lt;/h1&gt;';
-  title1 = `&#x21&#x28&#x2B`;
+  title = `&amp;amp;lt;&amp;`;
+  title1 = ``;
+  opt = {decimal:true};
+
+  constructor(
+    private escape: Escape, 
+    private unescape: Unescape
+  ) {}
 
   ngOnInit() {
-    
+    console.log('This is an escape test', this.escape.it('<h1>yo</h1>'));
+    console.log('This is an unescape test', this.unescape.it(this.escape.it(this.escape.it('<h1>yo</h1>'))));
   }
 }
