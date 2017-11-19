@@ -1,6 +1,9 @@
 {
-    "$schema": "./node_modules/ng-packagr/ng-packagr.schema.json",
-    "lib": {
-      "entryFile": "exposables.ts"
+  "$schema": "./node_modules/ng-packagr/ng-packagr.schema.json",
+  "lib": {
+    "entryFile": "exposables.ts",
+    "externals": {
+      "he": "he"
     }
   }
+}
