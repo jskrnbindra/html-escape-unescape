@@ -15,7 +15,6 @@ export class EscapePipe implements PipeTransform {
  * @return {string} HTML escaped value
  */
   transform(value: any, arg?: number | string): string {
- 
     if (value === null || value === undefined) {
       throw `The input value to the pipe must be a string or a string convertible value like number, booleans, etc.`;
     }
