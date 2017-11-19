@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Escape } from './escape';
@@ -19,8 +19,14 @@ const services = [
   imports: [
     CommonModule
   ],
-  declarations: [ ...pipes ],
-  exports: [...pipes, ...services],
-  providers: [...services]
+  declarations: [...pipes],
+  exports: [...pipes],
 })
-export class HTMLEscapeUnescapeModule {}
+export class HTMLEscapeUnescapeModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: HTMLEscapeUnescapeModule,
+      providers: [...services]
+    }
+  }
+}
