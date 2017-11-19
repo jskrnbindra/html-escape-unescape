@@ -1,4 +1,4 @@
 # html-escape-unescape
 Fast, sophisticated HTML encoding decoding
 
-## Docs Coming soon
+Docs Coming soon.
