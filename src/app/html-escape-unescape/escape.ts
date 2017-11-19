@@ -1,5 +1,5 @@
 import * as _h from 'he';
-import { BAD_REQUEST_ERR_MSG, DEEP_ARG } from './config';
+import { BAD_REQUEST_ERR_MSG, DEEP_ARG, DOCS_LINK } from './config';
 
 export class Escape {
 
@@ -31,7 +31,7 @@ export class Escape {
             }
         }
         if (typeof arg ==  'object') {
-            throw 'No options for Escape. Refer to the docs at https://www.npmjs.com/package/html-escape-unescape to see the correct usage.';
+            throw `No options for Escape. Refer to the docs at ${DOCS_LINK} to see the correct usage.`;
         }
 
         throw BAD_REQUEST_ERR_MSG;
