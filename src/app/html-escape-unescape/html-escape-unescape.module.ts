@@ -21,12 +21,13 @@ const services = [
   ],
   declarations: [...pipes],
   exports: [...pipes],
+  providers: [...services]
 })
 export class HTMLEscapeUnescapeModule {
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: HTMLEscapeUnescapeModule,
-      providers: [...services]
-    }
-  }
+  // static forRoot(): ModuleWithProviders {
+  //   return {
+  //     ngModule: HTMLEscapeUnescapeModule,
+  //     providers: [...services]
+  //   }
+  // }
 }

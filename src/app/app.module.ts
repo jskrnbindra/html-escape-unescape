@@ -11,7 +11,7 @@ import { HTMLEscapeUnescapeModule } from './html-escape-unescape'
   ],
   imports: [
     BrowserModule, 
-    HTMLEscapeUnescapeModule.forRoot()
+    HTMLEscapeUnescapeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
