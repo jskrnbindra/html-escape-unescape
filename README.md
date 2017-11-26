@@ -37,5 +37,5 @@ Unescape a string X times.
 ```
 Unescape a string recursively 
 ```html
-{{ someStringToBeUnescapedXtimes | unescape:'recursive' }}
+{{ someStringToBeUnescaped?times | unescape:'recursive' }}
 ```
