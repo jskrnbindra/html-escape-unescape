@@ -4,7 +4,6 @@ import { CommonModule } from '@angular/common';
 import { Escape } from './escape';
 import { Unescape } from './unescape';
 import { EscapePipe, UnescapePipe } from './pipes';
-import { BillloPipe } from './pipes/billlo.pipe'
 
 const pipes = [
   EscapePipe,
@@ -20,7 +19,7 @@ const services = [
   imports: [
     CommonModule
   ],
-  declarations: [...pipes, BillloPipe],
+  declarations: [...pipes],
   exports: [...pipes],
   providers: [...services]
 })

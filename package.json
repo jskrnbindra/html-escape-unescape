@@ -1,6 +1,6 @@
 {
   "name": "html-escape-unescape",
-  "version": "0.9.10",
+  "version": "0.9.11",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -13,7 +13,8 @@
   },
   "private": false,
   "dependencies": {
-    "he": "^1.1.1"
+    "he": "^1.1.1",
+    "ng-packagr": "^1.6.0"
   },
   "peerDependencies": {
     "@angular/animations": "^5.0.0",
@@ -54,7 +55,6 @@
     "karma-coverage-istanbul-reporter": "^1.3.0",
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "ng-packagr": "^1.6.0",
     "protractor": "^5.2.0",
     "rxjs": "^5.5.2",
     "ts-node": "^3.3.0",
