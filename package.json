@@ -6,7 +6,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "tap --coverage",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "packagr": "ng-packagr -p ng-package.json"

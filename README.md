@@ -1,4 +1,6 @@
 # html-escape-unescape
+[![Build Status](https://travis-ci.org/jskrnbindra/html-escape-unescape.svg?branch=master)](https://travis-ci.org/jskrnbindra/html-escape-unescape)
+[![Coverage Status](https://coveralls.io/repos/github/jskrnbindra/html-escape-unescape/badge.svg)](https://coveralls.io/github/jskrnbindra/html-escape-unescape)
 Fast, sophisticated HTML encoding decoding.
 
 ### Installation
