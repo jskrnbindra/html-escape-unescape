@@ -1,6 +1,7 @@
 # html-escape-unescape
 [![Build Status](https://travis-ci.org/jskrnbindra/html-escape-unescape.svg?branch=master)](https://travis-ci.org/jskrnbindra/html-escape-unescape)
 [![Coverage Status](https://coveralls.io/repos/github/jskrnbindra/html-escape-unescape/badge.svg)](https://coveralls.io/github/jskrnbindra/html-escape-unescape)
+
 A lightweight library to meet all you HTML encoding/decoding needs, in Angular(not AngularJS), using the power of pipes. 🎯
 ### Installation
 
@@ -39,10 +40,12 @@ Sometimes you have a need to escape a string multiple times. Consider the follow
 let str = "&amp;lt;strong&amp;gt;Yo&amp;lt;/string&amp;gt;";
 ```
 Here ```str``` is a doubly HTML encoded string. So, to decode it, you need to unescape it twice.
+
 The string ```str``` when HTML decoded once, using the ```unescape pipe``` gives ```&lt;strong&gt;Yo&lt;/string&gt;```
+
 Passing the result through the unescape pipe again, would result in: ```<strong>Yo</string>```
 
-##### You can do it in a better way 
+#### You can do it in a better way 
 To unescape a string ```N``` times, just pass in a number as a parameter.
 Where ```N``` is the number of times you want the pipe to be chained.
 ```html
@@ -60,6 +63,7 @@ For any string which was encoded unknown number of times, the ```recursive``` pa
 ```html
 {{ someStringToBeUnescaped?times | unescape:'recursive' }}
 ```
+
 ## Troubleshooting
 
 Please follow this guidelines when reporting bugs and feature requests:
