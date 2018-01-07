@@ -1,8 +1,11 @@
 {
   "name": "html-escape-unescape",
-  "version": "0.9.12",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "A lightweight library to meet all you HTML encoding and decoding needs in Angular.",
+  "keywords": [
+    "html", "html-escape", "html-unescape", "escape", "unescape", "encode", "decode", "angular", "simple", "security", "nodejs", "angular5", "utility", "javascript", "pipes"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
