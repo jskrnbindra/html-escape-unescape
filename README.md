@@ -54,7 +54,7 @@ And the same goes for escaping
 {{ someStringToBeEscapedNtimes | escape:N }}
 ```
 ### What if you don't know how many times a string has been encoded?🧐
-It is difficult to determine how many times a string was HTML encoded, or there can be inputs which are encoded for non-deterministic/variable number of times.
+It is, often, difficult to determine how many times a string was HTML encoded, or there can be inputs which are encoded for non-deterministic/variable number of times.
 #### Ask the pipe to be recursive 😎
 Use the 'recursive' parameter with the ```unescape pipe``` and let it do the rest.
 For any string which was encoded unknown number of times, the ```recursive``` parameter to the unescape pipe will unescape the text untill it is fully unescaped to readable HTML text.
