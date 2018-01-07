@@ -28,6 +28,7 @@ Using html-escape-unescape is as easy as piping your value to the appropriate pi
 {{ someStringToBeUnescaped | unescape }}
 ```
 Yay! it works. 🎉
+
 This will do for most of the use cases.
 
 ## But that's not it, there's more
