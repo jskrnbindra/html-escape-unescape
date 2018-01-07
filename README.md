@@ -1,8 +1,7 @@
 # html-escape-unescape
 [![Build Status](https://travis-ci.org/jskrnbindra/html-escape-unescape.svg?branch=master)](https://travis-ci.org/jskrnbindra/html-escape-unescape)
-[![Coverage Status](https://coveralls.io/repos/github/jskrnbindra/html-escape-unescape/badge.svg)](https://coveralls.io/github/jskrnbindra/html-escape-unescape)
 
-A lightweight library to meet all you HTML encoding/decoding needs, in Angular(not AngularJS), using the power of pipes. 🎯
+A lightweight library to meet all your HTML encoding/decoding needs, in Angular, using the power of pipes. 🎯
 ### Installation
 
 ```bash
@@ -20,7 +19,7 @@ imports: [
     ]
 ```
 2. Start using the pipes
-Using html-escape-unescape is as easy as piping your value to the appropriate pipe. 
+Using html-escape-unescape is as easy as piping your value to the appropriate pipe in your.component.html. 
 ```html
 {{ someStringToBeEscaped | escape }}
 ```
@@ -34,7 +33,7 @@ This will do for most of the use cases.
 ## But that's not it, there's more
 
 #### Escape/Unescape strings multiple times
-Sometimes you have a need to escape a string multiple times. Consider the following case:
+Sometimes you need to escape a string multiple times. Consider the following case:
 ```typescript
 let str = "&amp;lt;strong&amp;gt;Yo&amp;lt;/string&amp;gt;";
 ```
@@ -62,6 +61,10 @@ For any string which was encoded unknown number of times, the ```recursive``` pa
 ```html
 {{ someStringToBeUnescaped?times | unescape:'recursive' }}
 ```
+
+### Upcoming 🏁
+A stand alone npm package which can be used in any Javascript runtime. Therefore it would be usable in Angular, React, NodeJS, etc.
+
 
 ## Troubleshooting
 
