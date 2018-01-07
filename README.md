@@ -1,13 +1,11 @@
 # html-escape-unescape
-[![Build Status](https://travis-ci.org/jskrnbindra/html-escape-unescape.svg?branch=master)](https://travis-ci.org/jskrnbindra/html-escape-unescape)
-[![Coverage Status](https://coveralls.io/repos/github/jskrnbindra/html-escape-unescape/badge.svg)](https://coveralls.io/github/jskrnbindra/html-escape-unescape)
-Fast, sophisticated HTML encoding decoding.
-
+A lightweight library to meet all you HTML encoding/decoding needs, in Angular(not AngularJS), using the power of pipes. 🎯
 ### Installation
-```bash
-npm install html-escape-unescape
-```
 
+```bash
+npm install -S html-escape-unescape
+```
+If you are using npm version v5.0.0 or above, you may omit the '-S' flag because npm now automatically updates your package.json and package-lock.json.
 ### Usage
 1. Import into your.module.ts
 ```typescript
@@ -20,19 +18,25 @@ imports: [
 ```
 2. Start using the pipes
 ##### Escape
-Basic
+Using html-escape-unescape is as easy as piping your value to the appropriate pipe. 
 ```html
 {{ someStringToBeEscaped | escape }}
 ```
+```html
+{{ someStringToBeUnescaped | unescape }}
+```
+Yay! it works. 🎉
+This will do for most of the use cases.
+
+## But that's not it, there's more
+
+#### Escape/Unescape strings multiple times
+
 Escape a string X times.
 ```html
 {{ someStringToBeEscapedXtimes | escape:X }}
 ```
-##### Unescape
-Basic
-```html
-{{ someStringToBeUnescaped | unescape }}
-```
+
 Unescape a string X times.
 ```html
 {{ someStringToBeUnescapedXtimes | unescape:X }}
