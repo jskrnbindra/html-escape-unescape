@@ -37,11 +37,11 @@ Sometimes you need to escape a string multiple times. Consider the following cas
 ```typescript
 let str = "&amp;lt;strong&amp;gt;Yo&amp;lt;/string&amp;gt;";
 ```
-Here ```str``` is a doubly HTML encoded string. So, to decode it, you need to unescape it twice.
+⋅⋅* Here ```str``` is a doubly HTML encoded string. So, to decode it, you need to unescape it twice.
 
-The string ```str``` when HTML decoded once, using the ```unescape pipe``` gives ```&lt;strong&gt;Yo&lt;/string&gt;```
+⋅⋅* The string ```str``` when HTML decoded once, using the ```unescape pipe``` gives ```&lt;strong&gt;Yo&lt;/string&gt;```
 
-Passing the result through the unescape pipe again, would result in: ```<strong>Yo</string>```
+⋅⋅* Passing the result through the unescape pipe again, would result in: ```<strong>Yo</string>```
 
 #### You can do it in a better way 
 To unescape a string ```N``` times, just pass in a number as a parameter.
