@@ -20,7 +20,6 @@ imports: [
     ]
 ```
 2. Start using the pipes
-##### Escape
 Using html-escape-unescape is as easy as piping your value to the appropriate pipe. 
 ```html
 {{ someStringToBeEscaped | escape }}
