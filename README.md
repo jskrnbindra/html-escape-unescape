@@ -35,13 +35,13 @@ This will do for most of the use cases.
 #### Escape/Unescape strings multiple times
 Sometimes you need to escape a string multiple times. Consider the following case:
 ```typescript
-let str = "&amp;lt;strong&amp;gt;Yo&amp;lt;/string&amp;gt;";
+let str = "&amp;lt;strong&amp;gt;Yo&amp;lt;/strong&amp;gt;";
 ```
 Here ```str``` is a doubly HTML encoded string. So, to decode it, you need to unescape it twice.
 
-The string ```str``` when HTML decoded once, using the ```unescape pipe``` gives ```&lt;strong&gt;Yo&lt;/string&gt;```
+The string ```str``` when HTML decoded once, using the ```unescape pipe``` gives ```&lt;strong&gt;Yo&lt;/strong&gt;```
 
-Passing the result through the unescape pipe again, would result in: ```<strong>Yo</string>```
+Passing the result through the unescape pipe again, would result in: ```<strong>Yo</strong>```
 
 #### You can do it in a better way 
 To unescape a string ```N``` times, just pass in a number as a parameter.
@@ -68,7 +68,7 @@ A stand alone npm package which can be used in any Javascript runtime. Therefore
 
 ## Troubleshooting
 
-Please follow this guidelines when reporting bugs and feature requests:
+Please follow these guidelines when reporting bugs and feature requests:
 
 1. Use [GitHub Issues](https://github.com/jskrnbindra/html-escape-unescape/issues) board to report bugs and feature requests (not our email address)
 2. Please **always** write steps to reproduce the error. That way we can focus on fixing the bug, not scratching our heads trying to reproduce it.
